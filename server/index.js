@@ -12,6 +12,7 @@ app.use(express.urlencoded({extended : false}));
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use('/api/members', require('./api/members'));
+app.use('/api/students', require('./api/students'));
 
 const PORT = process.env.PORT || 5000; // use PORT if available otherwise use 5000
 app.listen(PORT, ()=>{
