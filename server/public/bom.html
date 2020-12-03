@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>הנדסת תכנה לאינטרנט תשע"ט, מעבדה 4"</title>
+  <script>
+    function show() {
+      alert(eval(document.getElementById("name").value));
+    }
+    function showProps() {
+      let temp = document.getElementById("name").value;
+      let obj = eval(temp);
+      for (prop in obj)
+        try { temp += '\n' + prop + ': ' + eval("obj." + prop) }
+        catch (err) { temp += '\n' + prop + ': BROWSER ERROR' }
+      alert(temp);
+      console.log(temp);
+    }
+    function showAll() {
+      let temp = "window:";
+      for (prop in window)
+        try { temp += '\n' + prop + ': ' + eval(prop) }
+        catch (err) { temp += '\n' + prop + ': BROWSER ERROR' }
+      alert(temp);
+      console.log(temp);
+    }
+  </script>
+</head>
+<body>
+  <form onsubmit="return false;">
+    <label for='name'>Object name:</label>
+    <input type="text" id="name" name="name"/>
+    <button onclick="show()">SHOW</button>
+    <button onclick="showProps()">SHOW PROPS</button><br />
+    <button onclick="showAll()">SHOW ALL</button><br />
+  </form>
+</body>
+</html>

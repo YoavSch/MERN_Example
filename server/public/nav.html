@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>הנדסת תכנה לאינטרנט תשע"ט, מעבדה 4"</title>
+    <!--style>
+        label {
+            text-align: right;
+            clear: both;
+            float:left;
+            margin-right:10px;
+        }
+        input {
+            float: left;
+        }
+    </style-->
+    <script>
+        let page = location.search === "" ? 0 : getUrlParameter("page");
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            let regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            let results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+        function show() {
+            if (location.search === "")
+                document.getElementById("header").textContent = "Hello Navigation";
+            else {
+                document.getElementById("header").textContent
+                                     = "Hello Navigation Page " + getUrlParameter("page");
+            }
+        }
+    </script>
+</head>
+<body onload="show()">
+    <h1 id="header">Hello Navigation</h1>
+    <form onsubmit="return false;">
+        <label for="url">Enter URL: </label>
+        <input type="url" name="url" id="url" />
+        <button onclick="location = document.getElementById('url').value">GO</button><br />
+        <button onclick="location = '?page=' + ++page">AUTO</button><br />
+        <button onclick="history.back()">PREVIOUS</button><button onclick="history.forward()">NEXT</button><br />
+    </form>
+</body>
+</html>

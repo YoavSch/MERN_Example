@@ -1,6 +1,33 @@
-<form method="post" action="http://localhost:5000/api/students">
-    Enter first Name:<input type="text" name="firstName" /><br />
-    Enter last Name:<input type="text" name="lastName"/><br>
-    Is Student:<input type="checkbox" name="isStudent"/><br/>
-    <input type="submit" />
-</form>
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+  </head>
+   <script>
+    function myFunction() {
+      document.getElementById("demo").innerHTML = "Hello World";
+    }
+    </script>
+  <body>
+      <div>
+        <h1>Welecome</h1>
+        <p>My first paragraph.</p>
+      </div>
+      <div>
+        <p id="demo"></p>
+       <button onclick="myFunction()">Click me</button>
+      </div>
+      <div>
+        <form method="post" action="http://localhost:5000/api/students">
+            Enter first Name:<input type="text" name="firstName" /><br />
+            Enter last Name:<input type="text" name="lastName"/><br>
+            Is Student:<input type="checkbox" name="isStudent"/><br/>
+            <input type="submit" />
+        </form>
+      </div>
+
+  </body>
+</html>

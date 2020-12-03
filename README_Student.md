@@ -88,6 +88,87 @@ router.delete('/:id', (req, res)=>{
 module.exports = router;
 ```
 
+### HTML
+
+```HTML
+<!DOCTYPE html>
+<html>
+   <head>
+     <title>Page Title</title>
+   </head>
+   <body>
+    <h1>My First Heading</h1>
+    <p>My first paragraph.</p>
+   </body>
+</html>
+```
+
+- The `<!DOCTYPE html>` declaration defines that this document is an HTML5 document
+- The `<html>` element is the root element of an HTML page
+- The `<head>` element contains meta information about the HTML page
+- The `<title>` element specifies a title for the HTML page
+- The `<body>` element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
+- The `<h1>` element defines a large heading
+- The `<p>` element defines a paragraph
+> See 1.png under public directory
+
+##### The `<a>` element defines a link
+
+`
+ <a href="https://www.w3schools.com">This is a link</a>
+`
+
+#### The `<img>` defines image
+`<img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142">`
+
+#### tables
+```HTML
+<table style="width:100%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+</table>
+```
+#### button
+
+```HTML
+ <button>Click me</button>
+```
+
+#### input
+
+```HTML
+ <input placeholder="insert your name"/>
+```
+
+#### `<div>`
+```HTML
+<div>
+ <div>
+    DIV1
+ </div>
+ <div>
+    DIV2
+ </div>
+ <div>
+    DIV3
+ </div>
+</div>
+```
+
+
 > Create default.html with basic form
 > connect the form to the new student API
 ```javascript
@@ -97,6 +178,17 @@ module.exports = router;
     Is Student:<input type="checkbox" name="isStudent"/><br/>
     <input type="submit" />
 </form>
-
 ```
+
+#### HTML + JS
+> When user click on some button we want to catch the event with javascript
+```HTML
+   <p id="demo"></p>
+  <button onclick="myFunction()">Click me</button>
+```
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}
+</script>
 

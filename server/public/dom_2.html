@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>הנדסת תכנה לאינטרנט תשע"ט, מעבדה 4"</title>
+  <script>
+    function show() {
+      let lentgh = document.getElementById("myList").children.length;
+      for (let i = 0; i < lentgh; i++) {
+        console.log(document.getElementById("myList").children[i].innerHTML);
+      }
+    }
+  </script>
+</head>
+<body onload="show()">
+  <ol id="myList">
+    <li>אתרוג</li>
+    <li>תפוז</li>
+    <li>לימון</li>
+    <li>קלמנטינה</li>
+  </ol>
+</body>
+</html>
