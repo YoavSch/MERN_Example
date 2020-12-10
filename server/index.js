@@ -12,7 +12,7 @@ app.use(logger)
 app.use(express.json())
 app.use(express.urlencoded({extended : false}));
 app.use(express.static(path.join(__dirname, 'public')))
-
+app.set('view engine','ejs');
 app.use('/api/members', require('./api/members'));
 app.use('/api/students', require('./api/students'));
 app.use('/api/fileManager', require('./api/fileManager'));

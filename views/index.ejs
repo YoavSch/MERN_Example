@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="author" content="">
+   <script src="./ejs_example.js"></script>
+  <link rel="stylesheet" href="/public/css/main.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+          <h1>You Searched For : <%= data.userQuery %></h1>
+          <h2>You are logggedin? <%= data.loggedIn %></h2>
+            <% if(data.loggedIn){ %>
+                <h2> You are logg in as : <%= data.username %> </h2>
+            <% } %>
+          <ul>
+            <% data.members.forEach((item) =>{ %>
+                <li> <%= item.name %> <%= item.email %> <%= item.status %> </li>
+            <% }); %>
+          </ul>
+        </div>
+        <div class="col-lg-4"> </div>
+      </div>
+
+
+</body>
+</html>

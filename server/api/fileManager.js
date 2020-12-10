@@ -129,7 +129,7 @@ router.delete('/async/:fileName', (req,res)=>{
       }
     });
     newfile.on('drain', () => {
-      req.resume();
+      req.resume(); 
       console.log("Resume");
     });
     req.on('end', stuff => {

@@ -9,14 +9,16 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-scripts": "3.4.3",
-    "uuid": "^8.3.1"
+    "uuid": "^8.3.1",
+    "ejs": "^2.6.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server:dev": "nodemon ./server/index.js"
+    "server:dev": "nodemon ./server/index.js",
+    "server:ejs:dev": "nodemon ./server/index_ejs.js"
   },
   "eslintConfig": {
     "extends": "react-app"
