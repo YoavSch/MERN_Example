@@ -6,11 +6,12 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.6.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-scripts": "3.4.3",
-    "uuid": "^8.3.1",
-    "ejs": "^2.6.1"
+    "uuid": "^8.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -18,7 +19,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server:dev": "nodemon ./server/index.js",
-    "server:ejs:dev": "nodemon ./server/index_ejs.js"
+    "server:ejs:dev": "nodemon ./server/index_ejs.js",
+    "server:mongo:dev": "nodemon ./server/index_mongo.js"
   },
   "eslintConfig": {
     "extends": "react-app"
