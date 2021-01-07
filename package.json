@@ -6,8 +6,15 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "bcrypt": "^5.0.0",
+    "connect-mongo": "^3.2.0",
     "dotenv": "^8.2.0",
     "ejs": "^2.6.1",
+    "express-flash": "0.0.2",
+    "express-session": "^1.17.1",
+    "method-override": "^3.0.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-scripts": "3.4.3",
@@ -20,7 +27,8 @@
     "eject": "react-scripts eject",
     "server:dev": "nodemon ./server/index.js",
     "server:ejs:dev": "nodemon ./server/index_ejs.js",
-    "server:mongo:dev": "nodemon ./server/index_mongo.js"
+    "server:mongo:dev": "nodemon ./server/index_mongo.js",
+    "server:session:dev": "nodemon ./server/index_session.js"
   },
   "eslintConfig": {
     "extends": "react-app"
