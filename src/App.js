@@ -1,40 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import axios from 'axios';
-import Multer from './multer/Multer';
-;
+import React, { useState } from 'react';
+import User from './components/User'
+import UserForm from './components/UserForm'
+import './App.css'
 
-class  App extends React.Component{
-  // componentDidMount() {
-  //   axios.get(`http://localhost:4000/api/members`)
-  //     .then(res => {
-  //       const persons = res.data;
-  //       console.log(persons)
-  //       this.setState({ persons });
-  //     })
-  // }
-  render() {
-    return (
-       <Multer></Multer>
-    // <div className="App">
+function App(){
+  const [users, setUsers] = useState([
+    {
+        name : "Queen Elizabeth",
+        message : "Queen Elizabeth message",
+        likes : 1
+      },
+      {
+        name : "Donald Trump",
+        message : "Donald Trump message",
+        likes : 2
+      },
+      {
+        name : "Leonardo da Vinci",
+        message : "Leonardo da Vinci message",
+        likes : 3
+      },
+      {
+        name : "Walt Disney",
+        message : "Walt Disney message",
+        likes : 4
+      }
+  ]);
 
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
-  )}
+  const onLikesChanged = () => {
+     console.log('likes changed');
+  }
+
+  const onNewUserCreated = (event) => {
+     const newUser = {
+         name : event.name,
+         message : event.message,
+         likes : 0
+     };
+
+     setUsers([...users, newUser]);
+  }
+
+  return (
+     <div className="app">
+       <UserForm onNewUserCreated={onNewUserCreated}/>
+       {users.map((user, i)=>{
+          return (<User key={i} user={user} increaseLikes={onLikesChanged}/>)
+       })}
+     </div>
+  )
 }
 
 export default App;
