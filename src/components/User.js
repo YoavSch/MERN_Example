@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 function User (props) {
-  let { user } = props
+  let { user} = props
 
   const [likes, setLikes] = useState(props.likes)
 
